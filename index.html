@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hotel Restaurante La Barca · Pedro Muñoz</title>
+  <meta name="description" content="Restaurante, pastelería, heladería y hotel en Pedro Muñoz (Ciudad Real). Hamburguesas, ensaladas, tostas, platos combinados, desayunos y tartas caseras. Av. de la Constitución, 34. Tel. 722 85 68 75.">
+  <meta name="theme-color" content="#062b8a">
+  <!-- Versión de prueba: quitar esta línea al publicar en el dominio definitivo -->
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add("js")</script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Hotel Restaurante La Barca · Pedro Muñoz">
+  <meta property="og:description" content="Cocina casera desde el desayuno hasta la cena, pastelería propia, heladería y habitaciones. Reservas al 722 85 68 75.">
+  <meta property="og:site_name" content="Hotel Restaurante La Barca">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Restaurant", "Hotel"],
+    "name": "Hotel Restaurante La Barca",
+    "description": "Restaurante, pastelería, heladería y hotel en Pedro Muñoz.",
+    "telephone": "+34 722 85 68 75",
+    "servesCuisine": ["Española", "Manchega", "Hamburguesas"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. de la Constitución, 34",
+      "postalCode": "13620",
+      "addressLocality": "Pedro Muñoz",
+      "addressRegion": "Ciudad Real",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 39.4068909, "longitude": -2.9505723 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "07:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "07:30", "closes": "23:59" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "23:59" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:30", "closes": "22:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/hotel.restaurante.labarca/",
+      "https://www.instagram.com/pasteleria_labarca/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#cocina" data-i18n="skip">Saltar al contenido</a>
+
+  <!-- La laguna: fondo vivo de toda la página (ondas y bandadas) -->
+  <canvas class="laguna" aria-hidden="true"></canvas>
+
+  <header class="bar">
+    <a class="wordmark" href="#inicio" aria-label="La Barca, inicio">La Barca</a>
+    <nav class="bar-nav" aria-label="Secciones">
+      <a href="#cocina" data-i18n="nav.cocina">Cocina</a>
+      <a href="#dulces" data-i18n="nav.dulces">Dulces</a>
+      <a href="#hotel" data-i18n="nav.hotel">Hotel</a>
+      <a href="#horario" data-i18n="nav.horario">Horario</a>
+    </nav>
+    <div class="bar-end">
+      <button class="lang" type="button" aria-label="Read in English" data-lang-toggle>EN</button>
+      <a class="btn btn-sand btn-small js-tel" href="tel:+34722856875" data-i18n="bar.llamar">Llamar</a>
+    </div>
+    <div class="travesia" aria-hidden="true"><span class="travesia-barca"></span></div>
+  </header>
+
+  <main>
+    <!-- Portada -->
+    <section class="hero" id="inicio" aria-labelledby="titulo">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 id="titulo" class="hero-title" aria-label="Hotel Restaurante La Barca"><span class="split">La Barca</span></h1>
+          <p class="hero-lead" data-i18n="hero.lead">Restaurante, pastelería y hotel en Pedro Muñoz. Cocina casera desde el primer café de la mañana hasta la cena.</p>
+          <p class="estado" data-estado aria-live="polite"><span class="estado-luz"></span><span data-estado-texto>Abrimos todos los días</span></p>
+          <div class="hero-actions">
+            <a class="btn btn-sand js-tel" href="tel:+34722856875"><span data-i18n="hero.llamar">Llamar</span> <span class="tel-num">722 85 68 75</span></a>
+            <a class="btn btn-line js-mapa" href="#horario" data-i18n="hero.llegar">Cómo llegar</a>
+          </div>
+        </div>
+
+        <figure class="hero-arch arch" data-reveal-arch>
+          <div class="hero-slides" data-slides>
+            <img src="assets/fotos/paella-marisco.jpg" alt="Paella de marisco con langostinos y limón" width="1200" height="1068" fetchpriority="high">
+            <img src="assets/fotos/lacon.jpg" alt="Lacón a la gallega con pimentón" width="1080" height="1350">
+            <img src="assets/fotos/tartas-redvelvet-queso.jpg" alt="Porciones de tarta red velvet y tarta de queso" width="1200" height="1500">
+            <img src="assets/fotos/gambon-gabardina.jpg" alt="Gambón gabardina con ensalada" width="1200" height="1200">
+          </div>
+        </figure>
+      </div>
+
+      <!-- La lámina de agua con la barca -->
+      <div class="agua" aria-hidden="true">
+        <svg class="agua-svg" viewBox="0 0 1600 140" preserveAspectRatio="none">
+          <path class="ola ola-1" d="M0 70 Q 100 50 200 70 T 400 70 T 600 70 T 800 70 T 1000 70 T 1200 70 T 1400 70 T 1600 70 T 1800 70 T 2000 70 T 2200 70 T 2400 70 T 2600 70 T 2800 70 T 3000 70 T 3200 70 V140 H0 Z"/>
+          <path class="ola ola-2" d="M0 92 Q 80 78 160 92 T 320 92 T 480 92 T 640 92 T 800 92 T 960 92 T 1120 92 T 1280 92 T 1440 92 T 1600 92 T 1760 92 T 1920 92 T 2080 92 T 2240 92 T 2400 92 T 2560 92 T 2720 92 T 2880 92 T 3040 92 T 3200 92 V140 H0 Z"/>
+        </svg>
+        <svg class="barca" viewBox="0 0 120 90" aria-hidden="true">
+          <path class="barca-vela" d="M60 6 L60 58 L22 58 Z"/>
+          <path class="barca-vela2" d="M64 16 L64 58 L92 58 Z"/>
+          <path class="barca-casco" d="M8 62 H112 Q102 84 84 84 H36 Q18 84 8 62 Z"/>
+        </svg>
+      </div>
+
+      <!-- Pestañas en arco: el índice de la página -->
+      <nav class="pestanas" aria-label="Qué hay en La Barca">
+        <a class="pestana" href="#cocina" style="--i:0"><span data-i18n="tab.cocina">La cocina</span></a>
+        <a class="pestana" href="#dulces" style="--i:1"><span data-i18n="tab.dulces">Dulces y helados</span></a>
+        <a class="pestana" href="#hotel" style="--i:2"><span data-i18n="tab.hotel">Habitaciones</span></a>
+        <a class="pestana" href="#horario" style="--i:3"><span data-i18n="tab.horario">Horario</span></a>
+      </nav>
+    </section>
+
+    <!-- Un día en La Barca -->
+    <section class="dia" aria-labelledby="dia-titulo">
+      <h2 id="dia-titulo" class="visually-hidden" data-i18n="dia.titulo">Un día en La Barca</h2>
+      <p class="dia-frase reveal" data-i18n-html="dia.frase">Abrimos a las 7:30 con café y bizcocho <span class="pic arch"><img src="assets/fotos/bizcochos.jpg" alt="" width="1200" height="1500" loading="lazy"></span>, a mediodía hay comida casera <span class="pic arch"><img src="assets/fotos/paellas.jpg" alt="" width="1200" height="1200" loading="lazy"></span> y los viernes y sábados cenamos hasta medianoche <span class="pic arch"><img src="assets/fotos/comedor.jpg" alt="" width="1200" height="900" loading="lazy"></span>.</p>
+      <div class="sello reveal">
+        <svg class="sello-forma" viewBox="0 0 120 150" aria-hidden="true"><path d="M6 150 V60 A54 54 0 0 1 114 60 V150 Z"/></svg>
+        <p class="sello-texto"><strong data-i18n="sello.titulo">Sello de Selección Pedroteña</strong> <span data-i18n="sello.texto">Turismo · Ayuntamiento de Pedro Muñoz</span></p>
+      </div>
+    </section>
+
+    <!-- La cocina -->
+    <section class="cocina" id="cocina" aria-labelledby="cocina-titulo">
+      <div class="cocina-head">
+        <h2 id="cocina-titulo" class="h2 reveal" data-i18n="cocina.titulo">La cocina</h2>
+        <p class="cocina-lead reveal" data-i18n="cocina.lead">Desayunos, hamburguesas, ensaladas, tostas, sándwiches, platos combinados y postres caseros.</p>
+      </div>
+
+      <div class="carta-tabs reveal" role="tablist" aria-label="Secciones de la carta" data-carta-tabs></div>
+      <div class="carta">
+        <div class="carta-lista" data-carta></div>
+        <figure class="carta-vista arch" aria-hidden="true" data-vista>
+          <div class="carta-vista-fotos" data-vista-fotos></div>
+          <figcaption class="carta-vista-nombre" data-vista-nombre></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Pastelería y heladería -->
+    <section class="dulces" id="dulces" aria-labelledby="dulces-titulo">
+      <div class="dulces-plato">
+        <div class="plato arch" data-dulce-foto></div>
+      </div>
+      <div class="dulces-texto">
+        <div>
+          <h2 id="dulces-titulo" class="h2 reveal" data-i18n="dulces.titulo">Pastelería y heladería</h2>
+          <div class="dulces-tabs reveal" role="tablist" aria-label="Pastelería y heladería" data-dulces-tabs></div>
+        </div>
+        <div class="dulces-cuerpo" data-dulces-cuerpo aria-live="polite"></div>
+        <div class="dulces-acciones">
+          <a class="celda celda-tinta" href="https://www.instagram.com/pasteleria_labarca/" target="_blank" rel="noopener" data-i18n="dulces.instagram">Ver la pastelería en Instagram</a>
+          <a class="celda celda-suave js-tel" href="tel:+34722856875" data-i18n="dulces.llamar">Preguntar por una tarta</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habitaciones -->
+    <section class="hotel" id="hotel" aria-labelledby="hotel-titulo">
+      <h2 id="hotel-titulo" class="h2 hotel-titulo reveal" data-i18n="hotel.titulo">Habitaciones</h2>
+      <p class="hotel-frase reveal" data-i18n-html="hotel.frase">Habitaciones dobles <span class="pic arch"><img src="assets/fotos/habitacion-matrimonio.jpg" alt="" width="1100" height="1467" loading="lazy"></span> con baño propio, aire acondicionado y wifi gratis, el restaurante abajo <span class="pic arch"><img src="assets/fotos/comedor.jpg" alt="" width="1200" height="900" loading="lazy"></span> y la Laguna del Pueblo a un paseo <span class="pic arch"><img src="assets/fotos/laguna-1.jpg" alt="" width="1920" height="1280" loading="lazy"></span>.</p>
+
+      <div class="habitaciones" data-habitaciones aria-label="Fotos de las habitaciones" tabindex="0"></div>
+
+      <div class="billete reveal">
+        <div class="billete-izq">
+          <h3 class="billete-titulo" data-i18n="billete.titulo">Reserva por teléfono</h3>
+          <p data-i18n="billete.texto">Sin plataformas ni comisiones: llámanos y te decimos precio y disponibilidad al momento.</p>
+        </div>
+        <div class="billete-der">
+          <p class="billete-num">722 85 68 75</p>
+          <ul class="billete-lista">
+            <li data-i18n="srv.bano">Baño propio</li>
+            <li data-i18n="srv.aire">Aire acondicionado</li>
+            <li data-i18n="srv.wifi">Wifi gratis</li>
+            <li data-i18n="srv.parking">Aparcamiento gratis</li>
+          </ul>
+          <a class="btn btn-tinta btn-ancho js-tel" href="tel:+34722856875" data-i18n="billete.boton">Llamar para reservar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Horario y cómo llegar -->
+    <section class="horario" id="horario" aria-labelledby="horario-titulo">
+      <div class="horario-texto">
+        <h2 id="horario-titulo" class="h2 reveal" data-i18n="horario.titulo">Horario y cómo llegar</h2>
+        <p class="hoy reveal" data-hoy>Abrimos todos los días.</p>
+        <ul class="semana-horas reveal" data-semana></ul>
+        <address class="direccion reveal">
+          <span>Av. de la Constitución, 34</span>
+          <span>13620 Pedro Muñoz (Ciudad Real)</span>
+          <span data-i18n="horario.repsol">En la N-420, junto a la gasolinera Repsol.</span>
+        </address>
+        <div class="horario-acciones reveal">
+          <a class="btn btn-tinta" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Restaurante+La+Barca+Pedro+Mu%C3%B1oz" target="_blank" rel="noopener" data-i18n="horario.mapa">Abrir en Google Maps</a>
+          <a class="btn btn-line-tinta js-tel" href="tel:+34722856875" data-i18n="horario.llamar">Llamar</a>
+        </div>
+      </div>
+
+      <figure class="mapa reveal">
+        <svg class="mapa-svg" viewBox="0 0 600 640" role="img" aria-labelledby="mapa-desc">
+          <desc id="mapa-desc" data-i18n="mapa.desc">Plano: La Barca está en la avenida de la Constitución, en la N-420, junto a la Repsol; la Laguna del Pueblo queda al norte.</desc>
+          <path class="mapa-laguna" d="M300 30 C 400 10 540 40 560 110 C 580 180 500 220 420 210 C 350 200 330 160 280 150 C 220 138 200 90 230 60 C 250 40 270 34 300 30 Z"/>
+          <g class="mapa-ondas">
+            <path d="M300 80 q 20 -8 40 0 t 40 0"/>
+            <path d="M380 120 q 20 -8 40 0 t 40 0"/>
+            <path d="M460 160 q 20 -8 40 0 t 40 0"/>
+          </g>
+          <path class="mapa-carretera" d="M-20 420 C 150 380 300 360 620 300"/>
+          <path class="mapa-calle" d="M120 640 C 160 520 240 430 300 372"/>
+          <path class="mapa-calle" d="M420 640 C 400 540 360 440 330 366"/>
+          <text class="mapa-rotulo" x="40" y="398" transform="rotate(-9 40 398)">N-420</text>
+          <text class="mapa-rotulo mapa-rotulo-agua" x="400" y="138" text-anchor="middle" data-i18n="mapa.laguna">Laguna del Pueblo</text>
+          <rect class="mapa-repsol" x="372" y="330" width="40" height="26" rx="3"/>
+          <text class="mapa-rotulo mapa-rotulo-chico" x="420" y="350">Repsol</text>
+          <g class="mapa-pin">
+            <path d="M296 352 V300 A26 26 0 0 1 348 300 V352 Z"/>
+            <circle cx="322" cy="306" r="8"/>
+          </g>
+          <text class="mapa-rotulo mapa-rotulo-casa" x="190" y="282">La Barca</text>
+        </svg>
+        <figcaption class="mapa-foto arch">
+          <img src="assets/fotos/laguna-2.jpg" alt="Laguna del Pueblo de Pedro Muñoz con aves" width="1920" height="1280" loading="lazy">
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p class="pie-marca" aria-label="La Barca" data-marca></p>
+    <div class="pie-cols">
+      <div class="pie-col">
+        <a href="#cocina" data-i18n="nav.cocina">Cocina</a>
+        <a href="#dulces" data-i18n="nav.dulces">Dulces</a>
+        <a href="#hotel" data-i18n="nav.hotel">Hotel</a>
+        <a href="#horario" data-i18n="nav.horario">Horario</a>
+      </div>
+      <div class="pie-col">
+        <a href="https://www.instagram.com/hotel.restaurante.labarca/" target="_blank" rel="noopener">Instagram · La Barca</a>
+        <a href="https://www.instagram.com/pasteleria_labarca/" target="_blank" rel="noopener">Instagram · Pastelería</a>
+      </div>
+      <address class="pie-col pie-contacto">
+        <a class="js-tel" href="tel:+34722856875">722 85 68 75</a>
+        <span>Av. de la Constitución, 34</span>
+        <span>13620 Pedro Muñoz (Ciudad Real)</span>
+      </address>
+    </div>
+    <div class="pie-final">
+      <p class="pie-creditos"><span data-i18n="pie.creditos">Fotos de la Laguna del Pueblo:</span> Gato Preto, CC BY-SA 4.0, vía Wikimedia Commons. <span data-i18n="pie.web">Web de</span> <a href="https://bramia.es" target="_blank" rel="noopener">Bramia</a>.</p>
+      <a class="btn btn-sand btn-small" href="#inicio" data-i18n="pie.arriba">Volver arriba</a>
+    </div>
+  </footer>
+
+  <!-- Barra de acciones en el móvil -->
+  <nav class="dock" aria-label="Acciones rápidas">
+    <a class="dock-btn js-tel" href="tel:+34722856875" data-i18n="dock.llamar">Llamar</a>
+    <a class="dock-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Restaurante+La+Barca+Pedro+Mu%C3%B1oz" target="_blank" rel="noopener" data-i18n="dock.llegar">Cómo llegar</a>
+    <a class="dock-btn" href="#cocina" data-i18n="dock.cocina">La cocina</a>
+  </nav>
+
+  <script src="js/data.js?v=4"></script>
+  <script src="js/carta.js?v=3"></script>
+  <script src="js/i18n.js?v=3"></script>
+  <script src="js/laguna.js?v=1"></script>
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>
