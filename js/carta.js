@@ -136,7 +136,7 @@ window.LA_BARCA_CARTA = [
     platos: [
       { foto: "tarta-chocolate", nombre: { es: "Tarta de chocolate", en: "Chocolate cake" }, precio: 4.5, desc: { es: "Casera.", en: "Homemade." } },
       { foto: "tartas-redvelvet-queso", nombre: { es: "Tarta red velvet", en: "Red velvet cake" }, precio: 4.5, desc: { es: "Casera.", en: "Homemade." } },
-      { foto: "tarta-queso", nombre: { es: "Tarta de queso manchego", en: "Manchego cheesecake" }, precio: 4.5, desc: { es: "Casera.", en: "Homemade." } },
+      { foto: "hotel-tarta-queso-frutos", nombre: { es: "Tarta de queso manchego", en: "Manchego cheesecake" }, precio: 4.5, desc: { es: "Casera, con frutos rojos.", en: "Homemade, with red berries." } },
       { nombre: { es: "Tarta de zanahoria", en: "Carrot cake" }, precio: 4.5, desc: { es: "Casera.", en: "Homemade." } },
       { nombre: { es: "Milhojas de crema pastelera", en: "Custard mille-feuille" }, precio: 4.5, desc: { es: "Casera.", en: "Homemade." } },
       { nombre: { es: "Tarta whisky", en: "Whisky ice-cream cake" }, precio: 4, desc: { es: "", en: "" } },

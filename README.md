@@ -18,13 +18,13 @@ Añil sobre arena: el zócalo azul de las casas manchegas y la cal. El único mo
 | `js/i18n.js` | Textos en inglés |
 | `js/laguna.js` | El fondo vivo (canvas) |
 | `js/app.js` | Idioma, "abierto ahora", carta con vista previa, pestañas, tira de habitaciones y entradas al hacer scroll |
-| `assets/fotos/` | Fotos (del Instagram del cliente, de la ficha antigua del hotel y de Wikimedia) |
+| `assets/fotos/` | Fotos: las `hotel-*` son de la ficha del hotel en hotelcastillalamancha.com; el resto, del Instagram del cliente y de Wikimedia (laguna) |
 | `assets/credits.json` | Créditos de las fotos de la laguna |
 
 ## Pendiente
 
 - **Carta**: pasada el 24-10-2026. Confirmar con el cliente las descripciones de los tazones de salmorejo y gazpacho (no venían en la carta), si el «Culpan» de la carta es un coulant, el precio de los helados artesanos (no venía). No tienen menú del día: se quitaron de la web el menú, el cocido de los martes y el marisco del fin de semana (salían de publicaciones antiguas).
-- **Fotos de habitaciones y fachada**: las de las habitaciones y el comedor vienen de la ficha antigua (anteriores dueños). Sustituir por fotos actuales con los mismos nombres de archivo.
+- **Fotos de la carta**: no hay fotos reales de hamburguesas, ensaladas, tostas ni combinados. Si el cliente las hace, se añaden con `foto` en `js/carta.js`.
 - **Confirmar con el cliente**: servicios de las habitaciones (baño propio, aire, wifi, aparcamiento), si admiten mascotas, número de habitaciones.
 - **Logo**: de momento el nombre va en texto.
 - **Al publicar en el dominio**: quitar `<meta name="robots" content="noindex">` de `index.html` (está para que Google no indexe la versión de prueba).

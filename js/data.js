@@ -69,11 +69,14 @@ window.LA_BARCA = {
 
   // Habitaciones (fotos provisionales: pedir fotos actuales al cliente).
   habitaciones: [
-    { foto: "fachada", nombre: { es: "El hotel, en la N-420", en: "The hotel, on the N-420" } },
-    { foto: "habitacion-matrimonio", nombre: { es: "Doble de matrimonio", en: "Double room" } },
-    { foto: "habitacion-doble-camas", nombre: { es: "Doble con dos camas", en: "Twin room" } },
-    { foto: "habitacion-verde", nombre: { es: "Doble con sillón", en: "Double with armchair" } },
-    { foto: "habitacion-armario", nombre: { es: "Doble con armario", en: "Double with wardrobe" } },
-    { foto: "comedor", nombre: { es: "El comedor, abajo", en: "The dining room downstairs" } }
+    { foto: "hotel-fachada", nombre: { es: "El hotel, en la N-420", en: "The hotel, on the N-420" } },
+    { foto: "hotel-hab-matrimonio", nombre: { es: "Doble de matrimonio", en: "Double room" } },
+    { foto: "hotel-hab-matrimonio-verde", nombre: { es: "Doble de matrimonio", en: "Double room" } },
+    { foto: "hotel-hab-dos-camas", nombre: { es: "Doble con dos camas", en: "Twin room" } },
+    { foto: "hotel-hab-salon", nombre: { es: "Habitación con salita", en: "Room with sitting area" } },
+    { foto: "hotel-hab-individual", nombre: { es: "Individual", en: "Single room" } },
+    { foto: "hotel-hidromasaje", nombre: { es: "Bañera de hidromasaje", en: "Whirlpool bath" } },
+    { foto: "hotel-bano", nombre: { es: "Baño con ducha", en: "Bathroom with shower" } },
+    { foto: "hotel-terraza", nombre: { es: "La terraza", en: "The terrace" } }
   ]
 };
