@@ -25,6 +25,9 @@
     el._fotos = $$(".pic", el).map((p) => p.outerHTML);
   });
 
+  const BANDERA_UK = `<svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice"><clipPath id="uk-t"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg>`;
+  const BANDERA_ES = `<svg viewBox="0 0 750 500" preserveAspectRatio="xMidYMid slice"><rect width="750" height="500" fill="#AA151B"/><rect y="125" width="750" height="250" fill="#F1BF00"/></svg>`;
+
   function t(es, en) { return lang === "en" ? en : es; }
   function tx(obj) { return obj ? obj[lang] || obj.es : ""; }
 
@@ -43,7 +46,9 @@
       }
     });
     const boton = $("[data-lang-toggle]");
-    boton.textContent = UI[lang].ingles;
+    $("[data-lang-txt]", boton).textContent = UI[lang].ingles;
+    // La bandera es la del idioma al que se cambia: Reino Unido en español, España en inglés.
+    $("[data-bandera]", boton).innerHTML = lang === "es" ? BANDERA_UK : BANDERA_ES;
     boton.setAttribute("aria-label", UI[lang].inglesLabel);
     pintarCarta();
     pintarDulces(dulceActivo);
@@ -232,15 +237,60 @@
     $(`#tab-${D.dulces[n].id}`).focus();
   });
 
-  /* ---------- Habitaciones: tira arrastrable ---------- */
+  /* ---------- Habitaciones: carrusel que no para ---------- */
+  // Las fotos van dos veces seguidas: cuando la tira llega a la copia, salta
+  // atrás exactamente media tira y el bucle no se nota.
   const tira = $("[data-habitaciones]");
+  let mitad = 0;
   function pintarHabitaciones() {
-    tira.innerHTML = D.habitaciones.map((h, i) => `
-      <figure class="hab" style="--i:${i}">
-        <div class="hab-foto arch"><img src="assets/fotos/${h.foto}.jpg" alt="${UI[lang].habAlt} ${tx(h.nombre)}" width="1100" height="1467" loading="lazy" draggable="false"></div>
+    const ficha = (h, i, copia) => `
+      <figure class="hab" style="--i:${i}"${copia ? ' aria-hidden="true"' : ""}>
+        <div class="hab-foto arch"><img src="assets/fotos/${h.foto}.jpg" alt="${copia ? "" : `${UI[lang].habAlt} ${tx(h.nombre)}`}" width="1024" height="684" loading="lazy" draggable="false"></div>
         <figcaption>${tx(h.nombre)}</figcaption>
-      </figure>`).join("");
+      </figure>`;
+    tira.innerHTML = D.habitaciones.map((h, i) => ficha(h, i, false)).join("") + D.habitaciones.map((h, i) => ficha(h, i, true)).join("");
+    medirTira();
   }
+  function medirTira() {
+    const fichas = tira.children;
+    const n = D.habitaciones.length;
+    mitad = fichas[n] ? fichas[n].offsetLeft - fichas[0].offsetLeft : 0;
+  }
+  window.addEventListener("resize", medirTira);
+
+  (function carrusel() {
+    const VELOCIDAD = window.matchMedia("(max-width: 760px)").matches ? 28 : 38; // px por segundo
+    let pos = 0, puesto = -1, ultimo = 0, usuario = 0, tocando = false, visible = false, raf = 0;
+
+    // Si el visitante desliza (rueda, trackpad, dedo o ratón), la tira le sigue
+    // y el avance automático espera un momento antes de seguir.
+    tira.addEventListener("scroll", () => {
+      if (Math.abs(tira.scrollLeft - puesto) > 2) usuario = performance.now();
+      // El bucle propio mantiene la posición entre 1 y mitad + 1; fuera de ahí es el visitante.
+      if (mitad && tira.scrollLeft >= mitad + 2) tira.scrollLeft -= mitad;
+      else if (mitad && tira.scrollLeft < 1) tira.scrollLeft += mitad;
+    }, { passive: true });
+    tira.addEventListener("touchstart", () => { tocando = true; }, { passive: true });
+    tira.addEventListener("touchend", () => { tocando = false; usuario = performance.now(); }, { passive: true });
+
+    function paso(t) {
+      const dt = ultimo ? Math.min(t - ultimo, 64) : 16;
+      ultimo = t;
+      const libre = !tocando && !tira.classList.contains("is-arrastrando") && t - usuario > 700;
+      if (Math.abs(tira.scrollLeft - puesto) > 2) pos = tira.scrollLeft; // el visitante la ha movido
+      if (libre && mitad) {
+        pos += VELOCIDAD * dt / 1000;
+        if (pos < 1) pos += mitad;
+        if (pos >= mitad + 1) pos -= mitad;
+        tira.scrollLeft = pos;
+        puesto = tira.scrollLeft;
+      }
+      raf = requestAnimationFrame(paso);
+    }
+    function arrancar() { cancelAnimationFrame(raf); ultimo = 0; if (visible && !document.hidden && !quieto) raf = requestAnimationFrame(paso); }
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; arrancar(); }).observe(tira);
+    document.addEventListener("visibilitychange", arrancar);
+  })();
 
   (function arrastre() {
     let x0 = 0, s0 = 0, vel = 0, ultimoX = 0, ultimoT = 0, activo = false, movido = false, inercia = 0;

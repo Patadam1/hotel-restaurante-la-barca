@@ -147,11 +147,22 @@ main, .pie { position: relative; z-index: 1; }
 }
 .bar-end { display: flex; align-items: center; gap: 12px; }
 .bar.is-solida .btn-sand { background: var(--anil); color: var(--arena); }
+/* Botón de idioma: la bandera del idioma al que cambias, con el código encima */
 .lang {
-  min-width: 44px; min-height: 42px; background: transparent; cursor: pointer;
-  font-family: var(--f-display); font-weight: 700; font-size: 0.875rem;
-  border-radius: var(--boton); border: 2px solid currentColor;
+  position: relative; display: grid; place-items: center;
+  width: 58px; height: 42px; padding: 0; cursor: pointer; overflow: hidden;
+  font-family: var(--f-display); font-weight: 700; font-size: 0.8125rem;
+  border-radius: var(--boton); border: 2px solid currentColor; background: var(--anil);
   transition: transform var(--t-press) var(--ease-out);
+}
+.lang-bandera, .lang-bandera svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lang-txt {
+  position: relative; padding: 2px 6px 1px; border-radius: 5px;
+  background: var(--anil); color: var(--arena); line-height: 1.2;
+}
+.lang-bandera svg { transition: transform 500ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .lang:hover .lang-bandera svg { transform: scale(1.15); }
 }
 .lang:active { transform: scale(0.94); }
 
@@ -523,15 +534,15 @@ main, .pie { position: relative; z-index: 1; }
 
 .habitaciones {
   margin-top: 80px; display: flex; gap: 20px;
-  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
-  padding: 24px var(--m) 24px; scroll-padding: 0 var(--m);
+  overflow-x: auto; overscroll-behavior-x: contain;
+  padding: 24px var(--m) 24px;
   scrollbar-width: none; cursor: grab;
 }
 .habitaciones::-webkit-scrollbar { display: none; }
-.habitaciones.is-arrastrando { cursor: grabbing; scroll-snap-type: none; }
+.habitaciones.is-arrastrando { cursor: grabbing; }
 .habitaciones:focus-visible { outline-offset: -3px; }
 .hab {
-  flex: none; width: clamp(240px, 26vw, 360px); scroll-snap-align: start;
+  flex: none; width: clamp(240px, 26vw, 360px);
   transition: transform 600ms var(--ease-out);
 }
 .hab-foto { aspect-ratio: 3 / 4; background: var(--anil-hondo); }
